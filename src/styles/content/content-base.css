@@ -160,3 +160,8 @@
 .content .toolbar .item.button.clear {
     background-color: #f9a825;
 }
+
+.content .toolbar .item.button.top {
+    background-color: #3f51b5;
+    margin-left: auto;
+}

@@ -42,3 +42,10 @@ function clearItems() {
     domHandler.clear();
     domHandler.render();
 }
+
+/**
+ * Scrolls to top of the page.
+ */
+function toTop() {
+    window.scrollTo(0, 0);
+}
