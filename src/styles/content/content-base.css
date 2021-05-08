@@ -3,5 +3,9 @@
 
     z-index: 1;
 
-    background-image: url(../assets/background.svg);
+    background-size: contain;
+    background-attachment: scroll;
+    background-image: url(../../assets/background.svg);
+
+    height: 2000px;
 }
