@@ -62,7 +62,7 @@
     height: fit-content;
 }
 
-.content .cards-container .item img {
+.content .cards-container .item .card-image {
     max-width: 512px;
 
     border-radius: 4px;
@@ -75,4 +75,20 @@
 
 .content .cards-container li:last-child {
     flex-grow: 100;
+}
+
+.content .cards-container .item.empty {
+    text-align: center;
+    color: #877f54;
+
+    text-shadow:
+        0 0 5px white,
+        0 0 10px white,
+        0 0 15px white,
+        0 0 20px white,
+        0 0 30px white,
+        0 0 40px white,
+        0 0 55px white,
+        0 0 75px white,
+        2px 2px 2px rgba(44, 151, 206, 0);
 }

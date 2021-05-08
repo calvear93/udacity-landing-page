@@ -3,9 +3,6 @@ Landing Page Website project for React Frontend Web developer nanodegree.
 
 ## Resources used
 
-- Material Design Icons
-https://materialdesignicons.com/
-
 - Google Fonts
 https://fonts.google.com/
 

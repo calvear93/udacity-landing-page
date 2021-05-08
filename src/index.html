@@ -45,10 +45,6 @@
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Newsreader"
         />
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/@mdi/font@5.9.55/css/materialdesignicons.min.css"
-        />
 
         <!-- main stylesheet -->
         <link rel="stylesheet" href="styles/index.css" />
@@ -75,41 +71,14 @@
             <div class="content">
                 <section class="intro">
                     <h1 class="text">
-                        Random cards for test DOM manipulation.
+                        Random cards for test DOM manipulation
                     </h1>
                 </section>
 
-                <ul class="cards-container card depth-2">
-                        <li class="item card depth-2">
-                            <img
-                                class="card-image"
-                                alt="card-image"
-                                src="https://picsum.photos/800/600"
-                            />
-                        </li>
-
-                        <li class="item card depth-2">
-                            <img
-                                alt="card-image"
-                                src="https://picsum.photos/400/200"
-                            />
-                        </li>
-
-                        <li class="item card depth-2">
-                            <img
-                                alt="card-image"
-                                src="https://picsum.photos/1200/600"
-                            />
-                        </li>
-
-                        <li class="item card depth-2">
-                            <img
-                                alt="card-image"
-                                src="https://picsum.photos/400/600"
-                            />
-                        </li>
-                        <!-- allows to keep flex layout aspect ratio -->
-                        <li></li>
+                <ul id="cards-container" class="cards-container card depth-2">
+                    <li class="item card empty">
+                        <h1>No Items</h1>
+                    </li>
                 </ul>
             </div>
 
@@ -168,5 +137,5 @@
     </body>
 
     <!-- main script -->
-    <script type="text/javascript" src="scripts/index.js"></script>
+    <script type="module" src="scripts/index.js"></script>
 </html>
