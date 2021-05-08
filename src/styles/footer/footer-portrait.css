@@ -1,0 +1,27 @@
+@media (max-width: 767px) {
+    .footer {
+        flex-direction: column;
+    }
+
+    .footer .author {
+        font-size: 1.4em;
+    }
+
+    .footer .bio {
+        font-size: 1.4em;
+    }
+
+    .footer .links {
+        flex-direction: row;
+    }
+
+    .footer .links .goto {
+        width: 100%;
+    }
+}
+
+@media (max-width: 520px) {
+    .footer .links {
+        flex-direction: column;
+    }
+}

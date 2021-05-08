@@ -1,0 +1,7 @@
+.content {
+    flex-grow: 1;
+
+    z-index: 1;
+
+    background-image: url(../assets/background.svg);
+}

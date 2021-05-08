@@ -17,3 +17,6 @@ https://glassmorphism.com/
 
 - Text Shadow Generator
 https://html-css-js.com/css/generator/text-shadow/
+
+- Favicon generator
+https://realfavicongenerator.net/

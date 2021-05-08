@@ -3,15 +3,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
     <head>
         <title>Udacity Landing page</title>
+
         <!-- document metadata -->
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="manifest" href="assets/site.webmanifest" />
-
         <meta
             name="description"
             content="A sample site for second project of Udacity's Frontend Web Developer nanodegree."
         />
+
         <!-- fav-icons -->
         <link rel="icon" href="assets/favicon/favicon.ico" />
         <link
@@ -38,22 +39,98 @@
         />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
+
         <!-- external assets -->
         <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=RocknRoll One"
+            href="https://fonts.googleapis.com/css?family=Newsreader"
         />
         <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/@mdi/font@5.9.55/css/materialdesignicons.min.css"
         />
+
         <!-- main stylesheet -->
         <link rel="stylesheet" href="styles/index.css" />
     </head>
 
     <body>
-        <main class="page"></main>
+        <main class="page">
+            <header class="header">
+                <span class="text">Welcome to the jungle</span>
+            </header>
+
+            <div class="content">
+                <section class="section card depth-3">
+                    <h3>1</h3>
+                </section>
+                <section class="section card depth-3 hoverable">
+                    <h3>2</h3>
+                </section>
+                <section class="section card depth-3">
+                    <h3>3</h3>
+                </section>
+            </div>
+
+            <footer class="footer">
+                <section class="author">
+                    <img
+                        class="avatar"
+                        alt="author-avatar"
+                        src="assets/avatar.png"
+                    />
+                    <span class="name">Cristopher Alvear</span>
+                </section>
+
+                <section class="bio">
+                    <p class="text">
+                        <b>Software Engineer</b> from <em>Chile</em>.
+                        <br />
+                        Coding is my passion, well coded software is my art.
+                    </p>
+                </section>
+
+                <section class="links">
+                    <a
+                        href="https://www.linkedin.com/in/calvear"
+                        title="Go to my LinkedIn Profile"
+                        target="_blank"
+                        class="goto linkedin"
+                    >
+                        <img
+                            alt="linkedin-icon"
+                            src="assets/brands/linkedin.png"
+                        />
+                    </a>
+
+                    <a
+                        href="https://github.com/calvear93"
+                        title="Go to my GitHub Profile"
+                        target="_blank"
+                        class="goto github"
+                    >
+                        <img
+                            alt="github-icon"
+                            src="assets/brands/github.png"
+                        />
+                    </a>
+
+                    <a
+                        href="https://www.npmjs.com/~calvear"
+                        title="Go to my NPM Profile"
+                        target="_blank"
+                        class="goto npm"
+                    >
+                        <img
+                            alt="npm-icon"
+                            src="assets/brands/npm.png"
+                        />
+                    </a>
+                </section>
+            </footer>
+        </main>
     </body>
 
+    <!-- main script -->
     <script type="text/javascript" src="scripts/index.js"></script>
 </html>

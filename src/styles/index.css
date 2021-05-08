@@ -1,6 +1,4 @@
-body {
-    margin: 0;
-
-    font-size: 16px;
-    font-family: 'RocknRoll One', sans;
-}
+@import "./common/index.css";
+@import "./header/index.css";
+@import "./content/index.css";
+@import "./footer/index.css";

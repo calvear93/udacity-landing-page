@@ -1,0 +1,56 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 1000">
+	<rect fill="#97d0c0" width="100" height="1000" />
+	<g>
+		<circle fill="#97d0c0" cx="50" cy="0" r="50" />
+		<g fill="#92ccbe">
+			<circle cx="0" cy="50" r="50" />
+			<circle cx="100" cy="50" r="50" />
+		</g>
+		<circle fill="#8ec7bb" cx="50" cy="100" r="50" />
+		<g fill="#89c3b9">
+			<circle cx="0" cy="150" r="50" />
+			<circle cx="100" cy="150" r="50" />
+		</g>
+		<circle fill="#85bfb7" cx="50" cy="200" r="50" />
+		<g fill="#81bab4">
+			<circle cx="0" cy="250" r="50" />
+			<circle cx="100" cy="250" r="50" />
+		</g>
+		<circle fill="#7db6b2" cx="50" cy="300" r="50" />
+		<g fill="#79b2af">
+			<circle cx="0" cy="350" r="50" />
+			<circle cx="100" cy="350" r="50" />
+		</g>
+		<circle fill="#76adad" cx="50" cy="400" r="50" />
+		<g fill="#72a9aa">
+			<circle cx="0" cy="450" r="50" />
+			<circle cx="100" cy="450" r="50" />
+		</g>
+		<circle fill="#6fa5a7" cx="50" cy="500" r="50" />
+		<g fill="#6ca0a4">
+			<circle cx="0" cy="550" r="50" />
+			<circle cx="100" cy="550" r="50" />
+		</g>
+		<circle fill="#699ca1" cx="50" cy="600" r="50" />
+		<g fill="#66989e">
+			<circle cx="0" cy="650" r="50" />
+			<circle cx="100" cy="650" r="50" />
+		</g>
+		<circle fill="#63939b" cx="50" cy="700" r="50" />
+		<g fill="#608f98">
+			<circle cx="0" cy="750" r="50" />
+			<circle cx="100" cy="750" r="50" />
+		</g>
+		<circle fill="#5e8b95" cx="50" cy="800" r="50" />
+		<g fill="#5b8791">
+			<circle cx="0" cy="850" r="50" />
+			<circle cx="100" cy="850" r="50" />
+		</g>
+		<circle fill="#59828e" cx="50" cy="900" r="50" />
+		<g fill="#567e8b">
+			<circle cx="0" cy="950" r="50" />
+			<circle cx="100" cy="950" r="50" />
+		</g>
+		<circle fill="#547a87" cx="50" cy="1000" r="50" />
+	</g>
+</svg>
