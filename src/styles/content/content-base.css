@@ -92,3 +92,71 @@
         0 0 75px white,
         2px 2px 2px rgba(44, 151, 206, 0);
 }
+
+.content .toolbar {
+    position: sticky;
+    top: 8em;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    z-index: 100;
+
+    padding: 1em;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.content .toolbar .item {
+    z-index: 120;
+
+    padding: 0.6em 1em;
+    margin: .6em .4em;
+
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    font-weight: bolder;
+
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.content .toolbar .item.input {
+    backdrop-filter: blur(32px);
+    -webkit-backdrop-filter: blur(32px);
+
+    background-color: transparent;
+}
+
+.content .toolbar .item:focus,
+.content .toolbar .item:hover {
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+.content .toolbar .item.button {
+    color: white;
+}
+
+.content .toolbar .item.button:focus,
+.content .toolbar .item.button:hover {
+    cursor: pointer;
+}
+
+.content .toolbar .item.button.remove {
+    background-color: #e53935;
+}
+
+.content .toolbar .item.button.add {
+    background-color: #4caf50;
+}
+
+.content .toolbar .item.button.clear {
+    background-color: #f9a825;
+}

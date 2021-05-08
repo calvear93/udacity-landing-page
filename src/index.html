@@ -75,6 +75,45 @@
                     </h1>
                 </section>
 
+                <section class="toolbar card depth-2">
+                    <div class="modifier">
+                        <input
+                            id="count-input"
+                            class="item input"
+                            type="number"
+                            placeholder="a number"
+                            title="Items count for modify"
+                            value="1"
+                            min="1"
+                            max="1000"
+                        />
+
+                        <button
+                            class="item button remove"
+                            title="Removes the quantity specified in the input"
+                            onclick="removeItems()"
+                        >
+                            Remove
+                        </button>
+
+                        <button
+                            class="item button add"
+                            title="Adds the quantity specified in the input"
+                            onclick="addItems()"
+                        >
+                            Add
+                        </button>
+                    </div>
+
+                    <button
+                        class="item button clear"
+                        title="Removes all items"
+                        onclick="clearItems()"
+                    >
+                        Clear
+                    </button>
+                </section>
+
                 <ul id="cards-container" class="cards-container card depth-2">
                     <li class="item card empty">
                         <h1>No Items</h1>
@@ -136,6 +175,8 @@
         </main>
     </body>
 
+    <!-- main module -->
+    <script type="module" src="scripts/main.js"></script>
     <!-- main script -->
-    <script type="module" src="scripts/index.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
 </html>

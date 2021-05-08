@@ -16,19 +16,23 @@ export default class {
     constructor(rootNodeId) {
         this.rootNode = document.getElementById(rootNodeId);
         this.items = []; // current grid items (may be a little Virtual DOM, but as list)
+        this.isEmpty = true;
     }
 
     /**
      * Triggers grid re-render.
      */
     render() {
+        if (this.isEmpty)
+            this.clear();
+
         let fragment = document.createDocumentFragment();
 
         for (let item of this.items)
             fragment.appendChild(item);
 
         // appends empty li to end for aspect ratio fix
-        fragment.appendChild(this._createItem(true));
+        !this.isEmpty && fragment.appendChild(this._createItem(true));
 
         this.rootNode.textContent = ""; // clears grid content
         this.rootNode.appendChild(fragment);
@@ -40,6 +44,14 @@ export default class {
      * @param {number} count
      */
     add(count) {
+        if (this.isEmpty)
+            this.items = [];
+
+        if (count < 1)
+            return;
+
+        this.isEmpty = false;
+
         while (count-- > 0) {
             this.items.push(this._createItem());
         }
@@ -51,7 +63,13 @@ export default class {
      * @param {number} count
      */
     remove(count) {
+        if (this.items.length === 0)
+            return;
+
         this.items = this.items.splice(0, this.items.length - count);
+
+        if (this.items.length === 0)
+            this.clear();
     }
 
     /**
@@ -59,6 +77,7 @@ export default class {
      */
     clear() {
         this.items = [this._noItemsBanner()];
+        this.isEmpty = true;
     }
 
     /**
@@ -98,9 +117,9 @@ export default class {
         item.className = "item card empty";
 
         let text = document.createElement("h1");
-        img.textContent = "No Items";
+        text.textContent = "No Items";
 
-        item.appendChild(img);
+        item.appendChild(text);
 
         return item;
     }
