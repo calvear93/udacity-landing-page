@@ -16,7 +16,7 @@ export default class {
     constructor(rootNodeId) {
         this.rootNode = document.getElementById(rootNodeId);
         this.items = []; // current grid items (may be a little Virtual DOM, but as list)
-        this.isEmpty = true;
+        this.isEmpty = true; // empty element flag
     }
 
     /**

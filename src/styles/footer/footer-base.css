@@ -53,6 +53,7 @@
     text-align: center;
 }
 
+/* relevant pages links */
 .footer .links {
     display: flex;
     flex-direction: column;
