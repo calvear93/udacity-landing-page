@@ -2,6 +2,7 @@
     flex-grow: 1;
 
     z-index: 1;
+    padding-bottom: 1em;
 
     background-size: contain;
     background-attachment: scroll;
@@ -41,4 +42,33 @@
         0 0 55px white,
         0 0 75px white,
         2px 2px 2px rgba(44, 151, 206, 0);
+}
+
+.content .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    padding: 0;
+
+    list-style-type: none;
+}
+
+.content .cards-container .item {
+    flex-grow: 1;
+    padding: 1em;
+
+    border-radius: 4px;
+
+    height: fit-content;
+}
+
+.content .cards-container .item img {
+    max-width: 512px;
+
+    border-radius: 4px;
+
+    max-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
 }
