@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
     <head>
         <title>Udacity Landing page</title>
 
@@ -9,43 +10,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- disabled manifest for localhost cors problem without server -->
         <!-- <link rel="manifest" href="assets/site.webmanifest" /> -->
-        <meta
-            name="description"
-            content="A sample site for second project of Udacity's Frontend Web Developer nanodegree."
-        />
+        <meta name="description"
+            content="A sample site for second project of Udacity's Frontend Web Developer nanodegree." />
 
         <!-- fav-icons -->
         <link rel="icon" href="assets/favicon/favicon.ico" />
-        <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="assets/favicon/apple-touch-icon.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="assets/favicon/favicon-32x32.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="assets/favicon/favicon-16x16.png"
-        />
-        <link
-            rel="mask-icon"
-            href="assets/favicon/safari-pinned-tab.svg"
-            color="#5bbad5"
-        />
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png" />
+        <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
 
         <!-- external assets -->
-        <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Newsreader"
-        />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Newsreader" />
 
         <!-- main stylesheet -->
         <link rel="stylesheet" href="styles/index.css" />
@@ -55,16 +33,10 @@
         <main class="page">
             <!-- HEADER -->
             <header class="header unselectable">
-                <img
-                    class="brand"
-                    alt="udacity-logo"
-                    src="assets/brands/udacity.png"
-                />
+                <img class="brand" alt="udacity-logo" src="assets/brands/udacity.png" />
                 <div class="title">
                     <h1 class="main">Landing Page</h1>
-                    <span class="for"
-                        >for Udacity's Frontend Web Developer Nanodegree</span
-                    >
+                    <span class="for">for Udacity's Frontend Web Developer Nanodegree</span>
                 </div>
             </header>
 
@@ -76,51 +48,42 @@
 
                 <nav class="toolbar card depth-2">
                     <div class="modifier">
-                        <input
-                            id="count-input"
-                            class="form-item input"
-                            type="number"
-                            placeholder="a number"
-                            title="Items count for modify"
-                            value="1"
-                            min="1"
-                            max="1000"
-                        />
-
-                        <button
-                            class="form-item button remove"
-                            title="Removes the quantity specified in the input"
-                            onclick="removeItems()"
-                        >
-                            Remove
+                        <button id="button-photo-briefing" class="form-item button"
+                            title="About us!" onclick="goTo('briefing')">
+                            Welcome
                         </button>
 
-                        <button
-                            class="form-item button add"
-                            title="Adds the quantity specified in the input"
-                            onclick="addItems()"
-                        >
-                            Add
+                        <button id="button-photo-gallery" class="form-item button"
+                            title="See and choose your favorite photographs from gallery!" onclick="goTo('gallery')">
+                            Photographs gallery
+                        </button>
+
+                        <button id="button-photo-how-to" class="form-item button"
+                            title="How to reserver?" onclick="goTo('howto')">
+                            How to reserve
+                        </button>
+
+                        <button id="button-photo-reserve" class="form-item button"
+                            title="Contacts us and reserve your favorite photographs!" onclick="goTo('contact')">
+                            Reserve photographs
                         </button>
                     </div>
 
-                    <button
-                        class="form-item button clear"
-                        title="Removes all items"
-                        onclick="clearItems()"
-                    >
-                        Clear
-                    </button>
-
-                    <button
-                        id="top-button"
-                        class="form-item button top hide"
-                        title="Scrolls to top of the page"
-                        onclick="toTop()"
-                    >
+                    <button id="top-button" class="form-item button top hide" title="Scrolls to top of the page"
+                        onclick="toTop()">
                         To Top
                     </button>
                 </nav>
+
+                <div id="briefing" class="briefing card depth-2">
+                    <h2 class="title">Welcome to this incredible photograph gallery</h2>
+                    <h3 class="sub">Best photographies captured by best photographers!</h3>
+                    <p class="text">We are a group of photography professionals that offer our incredible photographs in
+                        this
+                        gallery.
+                        Enjoy the view and if you like, you can select the photos you want to reserve, then fill out a
+                        form if you want us to contact you.</p>
+                </div>
 
                 <ul id="cards-container" class="cards-container card depth-2">
                     <li class="item card empty">
@@ -128,42 +91,33 @@
                     </li>
                 </ul>
 
+                <div id="how-to" class="briefing card depth-2">
+                    <h2 class="title">You can reserve photographs selection from the gallery!</h2>
+                    <h3 class="sub">Contact us with your reservation from the form below.</h3>
+                </div>
+
                 <section class="intro">
                     <h1 class="text">Reserve them here today!</h1>
                 </section>
 
-                <section class="contact-us card depth-2">
+                <section id="contact-us" class="contact-us card depth-2">
                     <div class="form card depth-2">
-                        <h2 class="form-title">Contact Us!</h2>
+                        <h2 class="form-title">Reserve them now!</h2>
 
-                        <input
-                            id="name-input"
-                            class="form-item input"
-                            type="text"
-                            placeholder="Biff Wellington"
-                            title="Enter your name"
-                        />
+                        <input id="name-input" class="form-item input" type="text" placeholder="Biff Wellington"
+                            title="Enter your name" />
 
-                        <input
-                            id="email-input"
-                            class="form-item input"
-                            type="email"
-                            placeholder="biwell21@gmail.com"
-                            title="Enter your email"
-                        />
+                        <input id="email-input" class="form-item input" type="email" placeholder="biwell21@gmail.com"
+                            title="Enter your email" />
 
-                        <button
-                            class="form-item button submit"
-                            title="Reserves photographies"
-                            onclick="removeItems()"
-                        >
+                        <button class="form-item button submit" title="Reserves photographies" onclick="removeItems()">
                             Submit
                         </button>
                     </div>
 
                     <ul id="selected-cards-container" class="cards-container card depth-2">
                         <li class="item card empty">
-                            <h1>No Items</h1>
+                            <h1>No photos selected</h1>
                         </li>
                     </ul>
                 </section>
@@ -172,11 +126,7 @@
             <!-- FOOTER -->
             <footer class="footer unselectable">
                 <section class="author">
-                    <img
-                        class="avatar"
-                        alt="author-avatar"
-                        src="assets/avatar.png"
-                    />
+                    <img class="avatar" alt="author-avatar" src="assets/avatar.png" />
                     <span class="name">Cristopher Alvear</span>
                 </section>
 
@@ -189,33 +139,18 @@
                 </section>
 
                 <section class="links">
-                    <a
-                        href="https://www.linkedin.com/in/calvear"
-                        title="Go to my LinkedIn Profile"
-                        target="_blank"
-                        class="goto linkedin"
-                    >
-                        <img
-                            alt="linkedin-icon"
-                            src="assets/brands/linkedin.png"
-                        />
+                    <a href="https://www.linkedin.com/in/calvear" title="Go to my LinkedIn Profile" target="_blank"
+                        class="goto linkedin">
+                        <img alt="linkedin-icon" src="assets/brands/linkedin.png" />
                     </a>
 
-                    <a
-                        href="https://github.com/calvear93"
-                        title="Go to my GitHub Profile"
-                        target="_blank"
-                        class="goto github"
-                    >
+                    <a href="https://github.com/calvear93" title="Go to my GitHub Profile" target="_blank"
+                        class="goto github">
                         <img alt="github-icon" src="assets/brands/github.png" />
                     </a>
 
-                    <a
-                        href="https://www.npmjs.com/~calvear"
-                        title="Go to my NPM Profile"
-                        target="_blank"
-                        class="goto npm"
-                    >
+                    <a href="https://www.npmjs.com/~calvear" title="Go to my NPM Profile" target="_blank"
+                        class="goto npm">
                         <img alt="npm-icon" src="assets/brands/npm.png" />
                     </a>
                 </section>
@@ -223,6 +158,9 @@
         </main>
     </body>
 
+    <script src="scripts/vissense.js"></script>
+
     <!-- main script -->
     <script type="text/javascript" src="scripts/main.js"></script>
+
 </html>

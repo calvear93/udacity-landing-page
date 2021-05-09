@@ -1,24 +1,81 @@
 var topButton;
 
+const sections = {
+    briefing: {
+        id: "briefing",
+        buttonId: "button-photo-briefing"
+    },
+    gallery: {
+        id: "cards-container",
+        buttonId: "button-photo-gallery"
+    },
+    howto: {
+        id: "how-to",
+        buttonId: "button-photo-how-to"
+    },
+    contact: {
+        id: "selected-cards-container",
+        buttonId: "button-photo-reserve"
+    }
+}
+
 window.onload = () => {
     // initializes grid DOM handler and
     // attaches it to global window element
     window.domHandler = new DomHandler("cards-container", "selected-cards-container");
 
+    // gets goto buttons DOM elements
+    for (let key in sections) {
+        sections[key] = {
+            ...sections[key],
+            element: document.getElementById(sections[key].id),
+            button: document.getElementById(sections[key].buttonId),
+        }
+
+        const { element, button, fullyVisible } = sections[key];
+
+        // VisSense(element)
+        //     .monitor({
+        //         visible: () => {
+        //             button.classList.add("active");
+        //         },
+        //         hidden: () => {
+        //             button.classList.remove("active");
+        //         }
+        //     }).start();
+    }
+
     // begins with random cards count
-    domHandler.add(randomNumber(10, 20));
+    domHandler.add(randomNumber(15, 30));
     domHandler.render();
+
+    window.onscroll = onScroll;
 };
 
-window.onscroll = () => {
+/**
+ * Sets button section active and disables the rest.
+ */
+function setActiveSection(id) {
+    const { [id]: selected, ...rest } = sections;
+
+    for (let section of Object.values(rest))
+        section.button?.classList.remove("active");
+
+    selected.button?.classList.add("active");
+}
+
+/**
+ * Handles scroll event.
+ */
+function onScroll() {
     // gets top button DOM element
     topButton = topButton ?? document.getElementById('top-button');
 
     // validates scroll position
-    if (window.scrollX === 0 && window.scrollY)
-        topButton.classList.remove("hide");
-    else
+    if (window.scrollY === 0)
         topButton.classList.add("hide");
+    else
+        topButton.classList.remove("hide");
 };
 
 /**
@@ -71,6 +128,18 @@ function clearItems() {
  */
 function toTop() {
     window.scrollTo(0, 0);
+}
+
+/**
+ * Scrolls to element by it's id.
+ */
+function goTo(id) {
+    const { element, button } = sections[id];
+
+    element.scrollIntoView();
+    window.scrollTo(window.scrollX - 360, window.scrollY - 360);
+
+    setActiveSection(id);
 }
 
 /**
@@ -247,7 +316,7 @@ class DomHandler {
         item.className = "item card empty";
 
         let text = document.createElement("h1");
-        text.textContent = "No Items";
+        text.textContent = "No photos selected";
 
         item.appendChild(text);
 

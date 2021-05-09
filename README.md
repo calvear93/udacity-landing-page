@@ -17,3 +17,6 @@ https://html-css-js.com/css/generator/text-shadow/
 
 - Favicon generator
 https://realfavicongenerator.net/
+
+- VisSense.js for visibility element observer.
+https://vissense.github.io/vissense/
