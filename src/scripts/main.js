@@ -3,10 +3,10 @@ var topButton;
 window.onload = () => {
     // initializes grid DOM handler and
     // attaches it to global window element
-    window.domHandler = new DomHandler("cards-container");
+    window.domHandler = new DomHandler("cards-container", "selected-cards-container");
 
     // begins with random cards count
-    domHandler.add(randomNumber(5, 20));
+    domHandler.add(randomNumber(10, 20));
     domHandler.render();
 };
 
@@ -106,30 +106,51 @@ class DomHandler {
      * Constructor.
      *
      * @param {string} rootNodeId - id from parent grid
+     * @param {string} selectedRootNodeId - id from parent selected grid
      */
-    constructor(rootNodeId) {
+    constructor(rootNodeId, selectedRootNodeId) {
         this.rootNode = document.getElementById(rootNodeId);
+        this.selectedRootNode = document.getElementById(selectedRootNodeId);
         this.items = []; // current grid items (may be a little Virtual DOM, but as list)
+        this.selected = {}; // selected items
+        this.index = {}; // for eases item access by it's id
         this.isEmpty = true; // empty element flag
+        this.incrementalId = 0;
     }
 
     /**
      * Triggers grid re-render.
      */
     render() {
-        if (this.isEmpty)
-            this.clear();
-
         let fragment = document.createDocumentFragment();
 
         for (let item of this.items)
             fragment.appendChild(item);
 
         // appends empty li to end for aspect ratio fix
-        !this.isEmpty && fragment.appendChild(this._createItem(true));
+        fragment.appendChild(this._createItem(true));
 
         this.rootNode.textContent = ""; // clears grid content
         this.rootNode.appendChild(fragment);
+    }
+
+    /**
+     * Triggers selected grid re-render.
+     */
+    renderSelected() {
+        if (this.isEmpty)
+            this.clear();
+
+        let fragment = document.createDocumentFragment();
+
+        for (let item of Object.values(this.selected))
+            fragment.appendChild(item);
+
+        // appends empty li to end for aspect ratio fix
+        !this.isEmpty && fragment.appendChild(this._createItem(true));
+
+        this.selectedRootNode.textContent = ""; // clears grid content
+        this.selectedRootNode.appendChild(fragment);
     }
 
     /**
@@ -138,40 +159,52 @@ class DomHandler {
      * @param {number} count
      */
     add(count) {
-        if (this.isEmpty)
-            this.items = [];
-
-        if (count < 1)
-            return;
-
-        this.isEmpty = false;
-
         while (count-- > 0) {
-            this.items.push(this._createItem());
+            const item = this._createItem();
+
+            this.index = {
+                ...this.index,
+                [item.id]: item
+            };
+            this.items.push(item);
         }
     }
 
     /**
-     * Removes 'n' random items to grid.
-     *
-     * @param {number} count
+     * Removes selected all items from grid.
      */
-    remove(count) {
-        if (this.items.length === 0)
-            return;
-
-        this.items = this.items.splice(0, this.items.length - count);
-
-        if (this.items.length === 0)
-            this.clear();
+    clear() {
+        this.selected = { _: this._noItemsBanner() };
+        this.isEmpty = true;
     }
 
     /**
-     * Removes all items from grid.
+     * Toggles item selection state.
+     *
+     * @param {number} id item id
      */
-    clear() {
-        this.items = [this._noItemsBanner()];
-        this.isEmpty = true;
+    _select(id) {
+        const { [id]: item, ...rest } = this.selected;
+
+        if (item) {
+            this.selected = rest;
+            this.index[id].classList.remove("selected");
+
+            if (Object.keys(this.selected).length === 0)
+                this.isEmpty = true;
+        } else {
+            if (this.isEmpty)
+                this.selected = {};
+
+            this.selected[id] = this.index[id].cloneNode(true);
+            this.selected[id].id = `${id}-selected`;
+            this.selected[id].classList.remove("hoverable");
+
+            this.index[id].classList.add("selected");
+            this.isEmpty = false;
+        }
+
+        this.renderSelected();
     }
 
     /**
@@ -187,7 +220,10 @@ class DomHandler {
         if (!empty) {
             const [width, height] = randomResolution();
 
-            item.className = "item card depth-2";
+            item.className = "item card depth-2 hoverable cursor";
+            item.id = ++this.incrementalId;
+
+            item.onclick = () => this._select(item.id);
 
             let img = document.createElement("img");
             img.className = "card-image";

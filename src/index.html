@@ -71,16 +71,14 @@
             <!-- MAIN CONTENT -->
             <div class="content">
                 <section class="intro">
-                    <h1 class="text">
-                        Random cards for test DOM manipulation
-                    </h1>
+                    <h1 class="text">Professional photography</h1>
                 </section>
 
-                <section class="toolbar card depth-2">
+                <nav class="toolbar card depth-2">
                     <div class="modifier">
                         <input
                             id="count-input"
-                            class="item input"
+                            class="form-item input"
                             type="number"
                             placeholder="a number"
                             title="Items count for modify"
@@ -90,7 +88,7 @@
                         />
 
                         <button
-                            class="item button remove"
+                            class="form-item button remove"
                             title="Removes the quantity specified in the input"
                             onclick="removeItems()"
                         >
@@ -98,7 +96,7 @@
                         </button>
 
                         <button
-                            class="item button add"
+                            class="form-item button add"
                             title="Adds the quantity specified in the input"
                             onclick="addItems()"
                         >
@@ -107,7 +105,7 @@
                     </div>
 
                     <button
-                        class="item button clear"
+                        class="form-item button clear"
                         title="Removes all items"
                         onclick="clearItems()"
                     >
@@ -116,19 +114,59 @@
 
                     <button
                         id="top-button"
-                        class="item button top hide"
+                        class="form-item button top hide"
                         title="Scrolls to top of the page"
                         onclick="toTop()"
                     >
                         To Top
                     </button>
-                </section>
+                </nav>
 
                 <ul id="cards-container" class="cards-container card depth-2">
                     <li class="item card empty">
                         <h1>No Items</h1>
                     </li>
                 </ul>
+
+                <section class="intro">
+                    <h1 class="text">Reserve them here today!</h1>
+                </section>
+
+                <section class="contact-us card depth-2">
+                    <div class="form card depth-2">
+                        <h2 class="form-title">Contact Us!</h2>
+
+                        <input
+                            id="name-input"
+                            class="form-item input"
+                            type="text"
+                            placeholder="Biff Wellington"
+                            title="Enter your name"
+                        />
+
+                        <input
+                            id="email-input"
+                            class="form-item input"
+                            type="email"
+                            placeholder="biwell21@gmail.com"
+                            title="Enter your email"
+                        />
+
+                        <button
+                            class="form-item button submit"
+                            title="Reserves photographies"
+                            onclick="removeItems()"
+                        >
+                            Submit
+                        </button>
+                    </div>
+
+                    <ul id="selected-cards-container" class="cards-container card depth-2">
+                        <li class="item card empty">
+                            <h1>No Items</h1>
+                        </li>
+                    </ul>
+                </section>
             </div>
 
             <!-- FOOTER -->

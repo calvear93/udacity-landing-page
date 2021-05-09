@@ -62,6 +62,10 @@
     height: fit-content;
 }
 
+.content .cards-container .item.selected {
+    background: rgba(76, 175, 80, 0.6);
+}
+
 .content .cards-container .item .card-image {
     max-width: 512px;
 
@@ -78,7 +82,10 @@
 }
 
 .content .cards-container .item.empty {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     color: #877f54;
 
     text-shadow:
@@ -92,7 +99,6 @@
         0 0 75px white,
         2px 2px 2px rgba(44, 151, 206, 0);
 }
-
 
 /* toolbar styles */
 .content .toolbar {
@@ -110,7 +116,7 @@
     -webkit-backdrop-filter: blur(12px);
 }
 
-.content .toolbar .item {
+.form-item {
     z-index: 120;
 
     padding: 0.6em 1em;
@@ -121,49 +127,89 @@
     outline: none;
     font-weight: bolder;
 
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
 
     -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.25);
     -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.25);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.25);
 }
 
-.content .toolbar .item.input {
+.form-item.input {
     backdrop-filter: blur(32px);
     -webkit-backdrop-filter: blur(32px);
 
     background-color: transparent;
 }
 
-.content .toolbar .item:focus,
-.content .toolbar .item:hover {
+.form-item:focus,
+.form-item:hover {
     -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.25);
     -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.25);
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.25);
 }
 
-.content .toolbar .item.button {
+.form-item.button {
     color: white;
 }
 
-.content .toolbar .item.button:focus,
-.content .toolbar .item.button:hover {
+.form-item.button:focus,
+.form-item.button:hover {
     cursor: pointer;
 }
 
-.content .toolbar .item.button.remove {
+.form-item.button.remove {
     background-color: #e53935;
 }
 
-.content .toolbar .item.button.add {
+.form-item.button.add {
     background-color: #4caf50;
 }
 
-.content .toolbar .item.button.clear {
+.form-item.button.clear {
     background-color: #f9a825;
 }
 
-.content .toolbar .item.button.top {
+.form-item.button.top {
     background-color: #3f51b5;
     margin-left: auto;
+}
+
+.form-item.button.submit {
+    background-color: #3f7cb5;
+}
+
+.content .contact-us {
+    display: flex;
+}
+
+.content .contact-us .form {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    position: sticky;
+    top: 15em;
+
+    height: fit-content;
+    min-width: 24em;
+
+    padding: 1em;
+}
+
+.content .contact-us .form .form-title {
+    color: #3F7CB5;
+
+    text-align: center;
+}
+
+.content .contact-us .cards-container {
+    flex-grow: 4;
+}
+
+.content .contact-us .cards-container .empty {
+    height: auto;
+}
+
+.content .contact-us .cards-container .item .card-image {
+    max-height: 12em;
 }

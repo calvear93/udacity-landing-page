@@ -1,3 +1,13 @@
+@media (max-width: 1024px) {
+    .content .contact-us {
+        flex-direction: column-reverse;
+    }
+
+    .content .contact-us .form {
+        position: inherit;
+    }
+}
+
 @media (max-width: 767px) {
     .content .intro .text {
         max-width: 100%;
